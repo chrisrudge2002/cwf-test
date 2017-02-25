@@ -1,0 +1,13 @@
+.main-grid {
+	background-color: $light-grey;
+	border: 2px solid $light-grey-border;
+	text-align: center;
+}
+
+.grid-item {
+	background-color: $capita-dark-blue;
+	border: 2px solid $capita-dark-blue;
+	color: $nav-text-colour;
+	padding: 2rem;
+	text-align: center;
+}
