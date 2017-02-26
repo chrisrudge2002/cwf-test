@@ -7,7 +7,16 @@
 .grid-item {
 	background-color: $capita-dark-blue;
 	border: 2px solid $capita-dark-blue;
+	border-radius: 5px;
 	color: $nav-text-colour;
 	padding: 2rem;
 	text-align: center;
+}
+
+.grid-remove-item {
+	cursor: pointer;
+	font-size: 1.5rem;
+	position: absolute;
+	right: 5px;
+	top: 1px;
 }

@@ -9,16 +9,24 @@ import * as layoutAPI from 'app/api/layout-api';
 class MainGrid extends Component {
 	constructor(props) {
 		super(props);
+		this.createTile = this.createTile.bind(this);
 		this.onLayoutChange = this.onLayoutChange.bind(this);
 	}
 	createTile(item) {
 		return (
-			<div key={item.i} className="grid-item">{item.i}</div>
+			<div key={item.i} className="grid-item">
+				<span>{item.i}</span>
+				<div className="grid-remove-item" onClick={this.onRemoveItem.bind(this, item.i)}>x</div>
+			</div>
 		);
 	}
 	onLayoutChange(layout) {
 		this.props.dispatch(actions.updateGridLayout(layout));
 		layoutAPI.saveLayout(layout);
+	}
+	onRemoveItem(key) {
+		this.props.dispatch(actions.removeGenericPanel(key));
+		layoutAPI.saveLayout(key);
 	}
 	render() {
 		return (

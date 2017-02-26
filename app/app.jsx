@@ -12,8 +12,7 @@ const store = require('app/store/configureStore').configure(initialState);
 
 // See if we have a layout saved in local storage, use it if we do
 const savedLayout = layoutAPI.getLayout();
-if (savedLayout) {
-	console.log(savedLayout);
+if (savedLayout && savedLayout.length > 0) {
 	store.dispatch(actions.updateGridLayout(savedLayout));
 }
 // Load foundation
